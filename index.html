@@ -32,6 +32,9 @@
     .r b { color: #fff; }
     .y, .m { font: 13px 'Geist Mono', monospace; color: #8a8a8a; }
     .y { padding-top: 3px; }
+    .idea { padding: 20px 0; border-top: 1px solid #1f1f1f; }
+    .idea h3 { font: 700 22px/1.2 'Bricolage Grotesque', sans-serif; color: #fff; margin: 0 0 8px; }
+    .idea p { color: #b4b4b4; margin: 0; }
     .contact { color: #b4b4b4; }
     @media (max-width: 600px) {
       main { padding: 56px 20px; }
@@ -131,6 +134,39 @@
         <li>Built data capture, ingestion and processing pipelines, plus cloud infrastructure for configurable web apps.</li>
       </ul>
     </div>
+  </div>
+
+  <h2>For fun: ideas for Fredrin</h2>
+  <div class="idea">
+    <h3>Proof, not passing tests</h3>
+    <p>Tests are increasingly written by the same AI that wrote the code, so a green check proves less than it used to. Video or screenshots of the change actually working are worth more.</p>
+    <ul>
+      <li>Fredrin already runs its own VM. Make proof the opinionated default: every PR spins up its own instance of the app there.</li>
+      <li>Each project keeps a script that brings the app up, seed data for the test, and a plain description of what to check.</li>
+      <li>An AI drives the change like a user would and records it. The video goes on the PR as the evidence.</li>
+    </ul>
+  </div>
+  <div class="idea">
+    <h3>Bugs that validate themselves</h3>
+    <p>Connect Fredrin to Linear or whatever ticket system a team already uses.</p>
+    <ul>
+      <li>When a bug comes in, an AI reproduces it, captures the console errors, and suggests where in the code the fix probably lives.</li>
+      <li>Confirmed bugs can kick off a fix PR automatically. It starts to feel like a factory.</li>
+    </ul>
+  </div>
+  <div class="idea">
+    <h3>Promote features, not environments</h3>
+    <p>The usual flow merges a feature branch into an intermediate environment, then promotes the whole environment. Someone else's broken code can keep yours from reaching prod.</p>
+    <ul>
+      <li>Instead, environment + feature branch makes a new ephemeral branch. Fredrin runs the tests on it and records the specific change as proof.</li>
+      <li>Going from the intermediate environment to prod, it does the same thing again before merging.</li>
+      <li>Features get promoted on their own, without the whole environment branch having to be good. Essential for hotfixes, and just nicer every day. Almost a superset of git.</li>
+      <li>I built this at a previous company, where we called it Lorax, and it went well.</li>
+    </ul>
+  </div>
+  <div class="idea">
+    <h3>Run it like a kitchen</h3>
+    <p>Coding with agents is more like being a head chef. A kitchen has stations, and Fredrin should surface each one: feature writers, PR reviewers, issue validators and so on.</p>
   </div>
 
   <h2>Reach me</h2>
